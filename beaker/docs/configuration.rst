@@ -282,7 +282,24 @@ regions (**optional**, list, tuple)
             'cache.long_term.expire': '86400',
 
 
+Backend-specific Options
+------------------------
+
+memcached
+~~~~~~~~~
+
+behavior (**optional**)
+    Specify `libmemcached behaviors`_ (only available when using ``pylibmc``)::
+
+        session.url = localhost:11211;localhost:11212
+        session.behavior.ketama = True
+        session.behavior.remove_failed = 1
+        session.behavior.retry_timeout = 1
+        session.behavior.dead_timeout = 60
+
+
 .. _Pylons: http://pylonshq.com/
 .. _TurboGears2: http://turbogears.org/
 .. _SQLAlchemy: http://www.sqlalchemy.org/
 .. _pycryptopp: http://pypi.python.org/pypi/pycryptopp
+.. _libmemcached behaviors: http://sendapatch.se/projects/pylibmc/behaviors.html
